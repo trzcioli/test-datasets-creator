@@ -1,6 +1,6 @@
 import unittest
 from app.create_dataset_average import filter_student_with_scored_test, filter_test_status_scoring_scored, \
-    group_by_class_and_mean_of_overall_score
+    group_by_class_and_mean_of_overall_score, create_dataset_average
 import os
 import pandas as pd
 import numpy as np
@@ -26,6 +26,11 @@ class TestCreateDatasetAverage(unittest.TestCase):
         calc_mean = group_by_class_and_mean_of_overall_score(only_with_overall_score)
         avg_actual = calc_mean.avg_class_test_overall_score
         self.assertEqual(avg_expected, float(avg_actual))
+
+    def test_cols_header(self):
+        dataset_average = create_dataset_average(path)
+        cols_names = ['class_id', 'class_name', 'teaching_hours', 'avg_class_test_overall_score']
+        self.assertEqual(cols_names, list(dataset_average.columns.values))
 
 
 if __name__ == '__main__':
