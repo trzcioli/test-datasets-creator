@@ -12,6 +12,12 @@ class TestCreateDatasetUtilization(unittest.TestCase):
     def test_isnull_test_authorized_at(self):
         self.assertFalse(pd.isnull(create_dataset_utilization(path)['test_authorized_at']).any())
 
+    def test_numbering_elem_of_class(self):
+        df = create_dataset_utilization(path)
+        df = df.loc[df['class_id'] == 1]
+        list_class_num = [x for x in df['class_test_number']]
+        self.assertTrue(list_class_num, [1, 2, 3])
+
 
 if __name__ == '__main__':
     unittest.main()
