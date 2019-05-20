@@ -11,8 +11,8 @@ def filter_test_status_scoring_scored(test_file):
     return test_file[(test_file.test_status == 'SCORING_SCORED')]
 
 
-def group_by_class_and_mean_of_overall_score(right):
-    return right.groupby('class_id') \
+def group_by_class_and_mean_of_overall_score(test_data):
+    return test_data.groupby('class_id') \
         .agg({'overall_score': 'mean'}) \
         .rename(columns={'overall_score': 'avg_class_test_overall_score'}) \
         .reset_index()
