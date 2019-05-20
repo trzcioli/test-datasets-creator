@@ -18,6 +18,12 @@ class TestCreateDatasetUtilization(unittest.TestCase):
         list_class_num = [x for x in df['class_test_number']]
         self.assertTrue(list_class_num, [1, 2, 3])
 
+    def test_cols_header(self):
+        dataset_utilization = create_dataset_utilization(path)
+        cols_names = ['class_id', 'class_name', 'teaching_hours', 'test_id', 'test_level',
+                      'test_created_at', 'test_authorized_at', 'class_test_number']
+        self.assertEqual(cols_names, list(dataset_utilization.columns.values))
+
 
 if __name__ == '__main__':
     unittest.main()
