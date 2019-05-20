@@ -10,18 +10,19 @@ def load_file(file_name, path):
     return file
 
 
-def load_and_correct_class_file(path):
-    class_file = pd.read_csv(path + '/input_files/class.csv', delimiter=';')
+def correct_class_file(path):
+    class_file = pd.read_csv(path + '/app/files/class_file_load.csv', delimiter=',')
     class_file_modify = class_file[~class_file['name'].str.contains(r'[\x5B-\x5E]+')]
     class_file_modify = class_file_modify[~class_file_modify['name'].str.contains(r'[^\x00-\x7F]+')]
-    class_file_modify.to_csv(path + '/app/files/class_file_load.csv', index=False)
+    class_file_modify.to_csv(path + '/app/files/class_file_load_correct.csv', index=False)
     return class_file_modify
 
 
 def load_files():
     load_file('test', path)
     load_file('test_level', path)
-    load_and_correct_class_file(path)
+    load_file('class', path)
+    correct_class_file(path)
 
 
 load_files()
