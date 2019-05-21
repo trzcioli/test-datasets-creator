@@ -1,6 +1,4 @@
 import pandas as pd
-import os
-path = os.path.dirname(os.path.dirname(__file__))
 
 
 def create_dataset_utilization(path):
@@ -22,5 +20,3 @@ def create_dataset_utilization(path):
 
     return test_and_class_merge
 
-
-create_dataset_utilization(path)

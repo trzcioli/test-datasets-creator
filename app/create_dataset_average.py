@@ -1,6 +1,4 @@
 import pandas as pd
-import os
-path = os.path.dirname(os.path.dirname(__file__))
 
 
 def filter_student_with_scored_test(class_file):
@@ -37,5 +35,3 @@ def create_dataset_average(path):
 
     return test_overall_score
 
-
-create_dataset_average(path)

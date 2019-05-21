@@ -37,6 +37,3 @@ def load_datasets_to_database():
 
     conn.commit()
 
-
-load_datasets_to_database()
-

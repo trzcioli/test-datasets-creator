@@ -1,7 +1,4 @@
 import pandas as pd
-import os
-
-path = os.path.dirname(os.path.dirname(__file__))
 
 
 def load_file(file_name, path):
@@ -18,11 +15,9 @@ def correct_class_file(path):
     return class_file_modify
 
 
-def load_files():
+def load_files(path):
     load_file('test', path)
     load_file('test_level', path)
     load_file('class', path)
     correct_class_file(path)
 
-
-load_files()
