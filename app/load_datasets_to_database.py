@@ -3,9 +3,9 @@ import pandas as pd
 import os
 
 
-def create_connection():
+def create_connection(path):
     try:
-        conn = sqlite3.connect('TestDB.db')
+        conn = sqlite3.connect(path + 'TestDB.db')
         return conn
     except sqlite3.Error as e:
         print(e)
@@ -17,7 +17,7 @@ def load_datasets_to_database():
     test_utilization = pd.read_csv(path + '/app/files/test_utilization.csv')
     test_average_scores = pd.read_csv(path + '/app/files/test_average_scores.csv')
 
-    conn = create_connection()
+    conn = create_connection(path)
 
     c = conn.cursor()
 
