@@ -20,7 +20,7 @@ def main():
         load_files(path)
         create_dataset_utilization(path)
         create_dataset_average(path)
-        load_datasets_to_database()
+        load_datasets_to_database(path)
     elif args.load_files:
         load_files(path)
     elif args.create_dataset_utilization:
@@ -28,7 +28,7 @@ def main():
     elif args.create_dataset_average:
         create_dataset_average(path)
     elif args.load_datasets_to_database:
-        load_datasets_to_database()
+        load_datasets_to_database(path)
 
 
 if __name__ == '__main__':
