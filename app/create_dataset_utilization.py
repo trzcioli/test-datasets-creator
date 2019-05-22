@@ -13,7 +13,7 @@ def create_dataset_utilization(path):
                                     'created_at': 'test_created_at', 'authorized_at': 'test_authorized_at'})
 
     test_and_class_merge = pd.merge(class_data, test_data[pd.notnull(test_data.test_authorized_at)],
-                                    on='class_id', how='inner')
+                                    on='class_id', how='right')
 
     test_and_class_merge['class_test_number'] = test_and_class_merge.groupby(by=['class_id']).cumcount() + 1
     test_and_class_merge.to_csv(path + '/app/files/test_utilization.csv', index=False)
