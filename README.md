@@ -25,6 +25,12 @@ In app/ folder are 5 scripts that:
 To load csv files and manipulate them I used Pandas library.  
 Another 4 scripts in tests/ folder contain unit tests (I used unittest library)
 
+***   
+
+**Requirements**   
+url addresses to file: [requirements](https://github.com/trzcioli/test-datasets-creater/blob/master/requirements.txt) 
+
+
 ***
 
 **Running**      
