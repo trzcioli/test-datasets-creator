@@ -4,7 +4,6 @@ import pandas as pd
 
 def create_connection(path):
     try:
-        print(path)
         conn = sqlite3.connect(path + '/db/TestDB.db')
         return conn
     except sqlite3.Error as e:
