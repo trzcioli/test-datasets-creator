@@ -13,7 +13,7 @@ def main():
     parser.add_argument("-lf", "--load_files", help="load csv files from input_files",  action='store_true')
     parser.add_argument("-cuti", "--create_dataset_utilization", help="create dataset utilization",  action='store_true')
     parser.add_argument("-cavg", "--create_dataset_average", help="create dataset average",  action='store_true')
-    parser.add_argument("-ld", "--load_datasets_to_database", help="load datasets to database",  action='store_true')
+    parser.add_argument("-ldb", "--load_datasets_to_database", help="load datasets to database",  action='store_true')
     args = parser.parse_args()
 
     if not any(vars(args).values()):

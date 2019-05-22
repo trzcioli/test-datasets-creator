@@ -19,7 +19,6 @@ def load_datasets_to_database(path):
     c = conn.cursor()
 
     if c is not None:
-
         c.execute('''CREATE TABLE IF NOT EXISTS test_utilization
                      ('class_id', 'class_name', 'teaching_hours', 'test_id', 'test_level',
                       'test_created_at', 'test_authorized_at', 'class_test_number')''')
@@ -33,8 +32,6 @@ def load_datasets_to_database(path):
 
         test_utilization.to_sql('test_utilization', conn, if_exists='append', index=False)
         test_average_scores.to_sql('test_average_scores', conn, if_exists='append', index=False)
-    else:
-        print("fkfjkgtr")
 
     conn.commit()
 
