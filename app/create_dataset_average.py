@@ -9,6 +9,10 @@ def filter_test_status_scoring_scored(test_file):
     return test_file[(test_file.test_status == 'SCORING_SCORED')]
 
 
+def filter_test_authorized_not_null(test_data):
+    return test_data[pd.notnull(test_data.test_authorized_at)]
+
+
 def group_by_class_and_mean_of_overall_score(test_data):
     return test_data.groupby('class_id') \
         .agg({'overall_score': 'mean'}) \
@@ -25,6 +29,8 @@ def create_dataset_average(path):
         .rename(index=str, columns={'id': 'class_id', 'name': 'class_name'})
 
     test_data = filter_test_status_scoring_scored(test_file)
+    test_data = filter_test_authorized_not_null(test_data)
+
     test_data = test_data[['class_id', 'created_at', 'authorized_at', 'overall_score']]\
         .rename(index=str, columns={'created_at': 'test_created_at', 'authorized_at': 'test_authorized_at'})
 
