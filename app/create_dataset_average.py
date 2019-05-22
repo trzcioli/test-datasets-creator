@@ -36,8 +36,7 @@ def create_dataset_average(path):
     test_data = filter_test_authorized_not_null(test_data)
     test_data = filter_test_overall_score_not_null(test_data)
 
-    test_data = test_data[['class_id', 'created_at', 'authorized_at', 'overall_score']]\
-        .rename(index=str, columns={'created_at': 'test_created_at', 'authorized_at': 'test_authorized_at'})
+    test_data = test_data[['class_id', 'overall_score']]
 
     group_by_class = group_by_class_and_mean_of_overall_score(test_data)
     test_overall_score = pd.merge(class_data, group_by_class,
