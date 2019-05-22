@@ -10,7 +10,7 @@ def filter_test_status_scoring_scored(test_file):
 
 
 def filter_test_authorized_not_null(test_data):
-    return test_data[pd.notnull(test_data.test_authorized_at)]
+    return test_data[pd.notnull(test_data.authorized_at)]
 
 
 def filter_test_overall_score_not_null(test_data):
@@ -41,7 +41,7 @@ def create_dataset_average(path):
 
     group_by_class = group_by_class_and_mean_of_overall_score(test_data)
     test_overall_score = pd.merge(class_data, group_by_class,
-                                  on='class_id', how='outer')
+                                  on='class_id', how='right')
     test_overall_score.to_csv(path + '/app/files/test_average_scores.csv', index=False)
 
     return test_overall_score
