@@ -17,6 +17,7 @@ def create_dataset_utilization(path):
 
     test_and_class_merge['class_test_number'] = test_and_class_merge.groupby(by=['class_id']).cumcount() + 1
     test_and_class_merge.to_csv(path + '/app/files/test_utilization.csv', index=False)
+    print('created dataset utilization')
 
     return test_and_class_merge
 

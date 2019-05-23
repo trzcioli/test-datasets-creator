@@ -42,6 +42,7 @@ def create_dataset_average(path):
     test_overall_score = pd.merge(class_data, group_by_class,
                                   on='class_id', how='right')
     test_overall_score.to_csv(path + '/app/files/test_average_scores.csv', index=False)
+    print('create dataset average')
 
     return test_overall_score
 

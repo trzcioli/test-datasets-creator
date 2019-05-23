@@ -34,4 +34,5 @@ def load_datasets_to_database(path):
         test_average_scores.to_sql('test_average_scores', conn, if_exists='append', index=False)
 
     conn.commit()
+    print('loaded datasets to database')
 
