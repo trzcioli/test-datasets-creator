@@ -34,12 +34,13 @@ url addresses to file: [requirements](https://github.com/trzcioli/test-datasets-
 ***
 
 **Running**      
-You can run all scripts in application using command (from root of app):  
+You can run all scripts in application using command (from root of app without any arguments):  
 ```console
 python3 app/main.py 
 ```
 
-Or you can run only one of all scripts if you want, running the app with optional arguments:   
+Or you can run only one of all scripts if you want, running the app with optional arguments:  
+"-h", "--help"  
 "-lf", "--load_files"    
 "-cuti", "--create_dataset_utilization"    
 "-cavg", "--create_dataset_average"    
@@ -50,6 +51,6 @@ Or you can run only one of all scripts if you want, running the app with optiona
 **Testing**  
 You can run tests using command:    
 ```console
-python3 -m unittest discover tests  
+python3 -m unittest discover tests -b 
 ```
 
