@@ -22,8 +22,8 @@ In app folder are 5 scripts that:
 
 ***
   
-I used Pandas library for loading csv files and manipulating them 
-Another 4 scripts in tests folder contain unit tests (I used unittest library)
+I used Pandas library for loading csv files and manipulating them.   
+Another 4 scripts in tests folder contain unit tests (I used unittest library).
 
 ***   
 
