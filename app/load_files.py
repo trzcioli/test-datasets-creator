@@ -7,7 +7,8 @@ def load_file(file_name, path):
         'test_level': ['created_at', 'updated_at'],
         'class': ['created_at', 'updated_at', 'latest_test_time']
     }
-    file = pd.read_csv(path + '/input_files/' + file_name + '.csv', delimiter=';', parse_dates=dates[file_name])
+    file = pd.read_csv(path + '/input_files/' + file_name + '.csv', delimiter=';',
+                       parse_dates=dates[file_name], dayfirst=True)
     file.to_csv(path + '/app/files/' + file_name + '_file_load.csv', index=False)
     return file
 
